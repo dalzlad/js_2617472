@@ -1,6 +1,6 @@
 const documentos = [1010, 1240, 2121, 7766, 9999];
 const nombres = ['Ana', 'Diana', 'Inés', 'Delia', 'Sor'];
-const listarDatos =()=>{
+const listarDatos = ()=>{
 
     //console.log('En construcción...')
     let mensaje = '';

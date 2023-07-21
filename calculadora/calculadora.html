@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body id="fondo">
+    <form>
+        <label>Color de Fondo</label>
+        <select id="colorFondo" onchange="cambiarFondo()">
+            <option value="">Seleccione Color</option>
+            <option value="red">Rojo</option>
+            <option value="green">Verde</option>
+            <option value="yellow">Amarillo</option>
+        </select>
+        <br/>
+        <label>Número 1:</label>
+        <input type="number" id="numero1" />
+        <br>
+        <label>Número 2:</label>
+        <input type="number" id="numero2" />
+        <br>
+        <label>Resultado</label>
+        <input type="text" id="resultado" readonly />
+        <br>
+        <button type="button" id="suma" onclick="sumar()">+</button>
+    </form>
+    <script src="js/funciones.js"></script>
+</body>
+</html>
