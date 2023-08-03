@@ -1,6 +1,28 @@
 const consumirAPI =() =>{
 
+   const departamento = 'ANTIOQUIA'
+   const vigenciadesde = new Date('2024/05/23');
+   let formatted_date = vigenciadesde.getFullYear()+'-'+(vigenciadesde.getMonth() +1)+'-'+vigenciadesde.getDate()
+   console.log(formatted_date)
+   formatted_date = new Date(formatted_date)
+   console.log(formatted_date.getMonth())
+
+   if(formatted_date > new Date()){
+    alert('Fecha Mayor')
+   }
+   else {
+    alert('Fecha Menor')
+   }
+
+   function formatoFecha(fecha, formato) {
+     //
+   }
+   
+  
+    //const url = 'https://www.datos.gov.co/resource/d4fr-sbn2.json?vigenciadesde='+vigenciadesde
+
     const url = 'https://www.datos.gov.co/resource/d4fr-sbn2.json?departamento=ANTIOQUIA'
+
 
     //Obtener(GET) los datos de una API con JSCRIPT
     $.ajax({

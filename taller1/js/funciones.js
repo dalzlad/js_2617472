@@ -1,3 +1,85 @@
+const consultarPrecios = () => {
+  let fechaDesde = document.getElementById('fechaDesde').value
+
+  //Convertir a formato Date
+  fechaDesde = new Date(fechaDesde)
+  
+  
+  if(fechaDesde > new Date()){
+    alert('No se pueden consultar fechas mayores a la actual')
+  }
+  else{
+  const url = `https://www.datos.gov.co/resource/ceyp-9c7c.json?vigenciadesde=${fechaDesde}&vigenciahasta=${fechaDesde}`
+  const limite = 20
+
+  $.ajax({
+    url: url,
+    type: "GET",
+    data: {
+      "$limit" : limite
+    }
+}).done(function(data) {
+  //alert("Total Registros " + data.length);
+  let impresion = '<table border="1" align="center">'
+  impresion += '<thead><tr><th>Fecha Inicio</th>'+
+  '<th>Fecha Fin</th>'+
+  '<th>Precio</th>'+
+  '</tr></thead>'+
+  '<tbody>'
+    data.forEach(registro => {
+
+    impresion += '<tr>'+
+                 `<td>${registro.vigenciadesde}</td>`+
+                 `<td>${registro.vigenciahasta}</td>`+
+                 `<td>${registro.valor}</td>`+
+                 '</tr>'
+  });
+  
+  impresion += '</tbody></tabla>'
+  document.getElementById('listaPrecios').innerHTML = impresion
+
+});
+  }
+}
+
+document.querySelector('#fechaDesde')
+.addEventListener('change', () => { consultarPrecios() })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+document.getElementById("inputFileToRead")
+  .addEventListener("change", function () {
+    let results = []
+    var fr = new FileReader();
+    fr.readAsText(this.files[0]);
+    fr.onload = function () {
+        document.getElementById('listaDatos').innerHTML = fr.result; //array where I would like to store results
+     }; 
+  
+  });
+
+
+
+*/
+
+
+
 
 
 /*
