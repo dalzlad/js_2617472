@@ -40,13 +40,3 @@ const calcularPromedio2 = (Ventas2) => {
 //Llamado al callback
 calcularPromedio1(Ventas, Ventas2, calcularPromedio2) 
 
-/*
-  Implementar una función que permita 
-  recibir un número entero y callbacks y luego:
-  Llamar Procedimiento para calcular e imprimir el doble
-  Llamar Procedimiento para calcular e imprimir el cuadrado
-  Llamar Procedimiento para calcular e imprimir el triple
-  Llamar Procedimiento para calcular e imprimir el cubo
-  
-  Cada procedimiento debe tener un retraso de 5 segundos.
-*/
